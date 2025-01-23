@@ -1,6 +1,7 @@
 package com.diotto.gamelist.dto;
 
 import com.diotto.gamelist.entities.Game;
+import com.diotto.gamelist.projections.GameMinProjection;
 import lombok.Getter;
 
 @Getter
@@ -22,5 +23,13 @@ public class GameMinDTO {
         releaseYear = entity.getReleaseYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        releaseYear = projection.getReleaseYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 }
